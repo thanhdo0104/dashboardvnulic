@@ -1,0 +1,160 @@
+.metric-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.metric-card.fade-in-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.metric-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--card-color);
+}
+
+.metric-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: var(--card-color);
+  transition: transform 0.3s ease;
+}
+
+.metric-card:hover .metric-icon {
+  transform: scale(1.1);
+}
+
+.metric-value {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.metric-label {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.metric-trend {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.metric-trend.positive {
+  background-color: #e8f5e8;
+  color: #2e7d32;
+}
+
+.metric-trend.negative {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+/* Card Color Variants */
+.purple-dark {
+  --card-color: #673ab7;
+}
+
+.purple {
+  --card-color: #9c27b0;
+}
+
+.blue-dark {
+  --card-color: #2196f3;
+}
+
+.pink-dark {
+  --card-color: #e91e63;
+}
+
+.blue-light {
+  --card-color: #03a9f4;
+}
+
+.green {
+  --card-color: #4caf50;
+}
+
+.orange {
+  --card-color: #ff9800;
+}
+
+/* Loading State */
+.metric-card.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.loading-spinner.small {
+  width: 16px;
+  height: 16px;
+  border-width: 2px;
+}
+
+/* Click Animation */
+.metric-card:active {
+  transform: scale(0.95);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .metric-card {
+    padding: 20px;
+  }
+  
+  .metric-value {
+    font-size: 1.8rem;
+  }
+  
+  .metric-icon {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .metric-card {
+    padding: 15px;
+  }
+  
+  .metric-value {
+    font-size: 1.5rem;
+  }
+  
+  .metric-icon {
+    font-size: 1.8rem;
+  }
+  
+  .metric-label {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,189 @@
+.circular-chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.progress-circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+  transition: all 0.5s ease;
+}
+
+.progress-ring-circle-bg {
+  opacity: 0.3;
+}
+
+.progress-ring-circle {
+  transition: stroke-dashoffset 1s ease-in-out;
+  filter: drop-shadow(0 2px 4px rgba(233, 30, 99, 0.3));
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #333;
+  z-index: 2;
+}
+
+.chart-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #666;
+  letter-spacing: 0.3px;
+  margin-bottom: 6px;
+}
+
+.percentage-display {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.percentage-display i {
+  font-size: 1.1rem;
+}
+
+.percentage-display.positive {
+  color: #2e7d32;
+}
+
+.percentage-display.negative {
+  color: #c62828;
+}
+
+.current-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.current-label {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.previous-value {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.previous-label {
+  font-size: 0.8rem;
+  color: #999;
+  font-weight: 400;
+}
+
+/* removed floating badge in favor of centered percentage */
+
+/* Hover Effects */
+.circular-chart:hover .progress-ring-circle {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+  stroke-width: 10;
+}
+
+/* no hover effect for removed badge */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .circular-chart {
+    height: 250px;
+  }
+  
+  .progress-circle {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .progress-ring {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .progress-ring-circle-bg,
+  .progress-ring-circle {
+    r: 80;
+    cx: 90;
+    cy: 90;
+  }
+  
+  .current-value {
+    font-size: 1.2rem;
+  }
+  
+  .current-label {
+    font-size: 0.8rem;
+  }
+  
+  .previous-value {
+    font-size: 1rem;
+  }
+  
+  .previous-label {
+    font-size: 0.7rem;
+  }
+  
+  /* removed */
+}
+
+@media (max-width: 480px) {
+  .circular-chart {
+    height: 200px;
+  }
+  
+  .progress-circle {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .progress-ring {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .progress-ring-circle-bg,
+  .progress-ring-circle {
+    r: 70;
+    cx: 80;
+    cy: 80;
+  }
+  
+  .current-value {
+    font-size: 1rem;
+  }
+  
+  .current-label {
+    font-size: 0.7rem;
+  }
+  
+  .previous-value {
+    font-size: 0.9rem;
+  }
+  
+  .previous-label {
+    font-size: 0.6rem;
+  }
+  
+  /* removed */
+}

@@ -1,0 +1,84 @@
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  gap: 20px;
+}
+
+.loading-container p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Animation delays for metric cards */
+.metric-card {
+  animation-delay: var(--delay, 0s);
+}
+
+/* Hover effects for interactive elements */
+.metric-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.chart-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Smooth transitions */
+.metric-card,
+.chart-container {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Loading state for individual components */
+.metric-card.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.chart-container.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Error state styling */
+.metric-card.error {
+  border-left: 4px solid #c62828;
+  background-color: #ffebee;
+}
+
+.chart-container.error {
+  border-left: 4px solid #c62828;
+  background-color: #ffebee;
+}
+
+/* Success state styling */
+.metric-card.success {
+  border-left: 4px solid #2e7d32;
+  background-color: #e8f5e8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .loading-container {
+    height: 40vh;
+  }
+  
+  .loading-container p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .loading-container {
+    height: 30vh;
+  }
+  
+  .loading-container p {
+    font-size: 0.9rem;
+  }
+}

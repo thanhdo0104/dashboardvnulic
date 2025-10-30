@@ -1,0 +1,63 @@
+.totals-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.totals-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.totals-header h1 {
+  background: linear-gradient(135deg, #e91e63, #9c27b0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.back-link {
+  text-decoration: none;
+  font-weight: 600;
+  color: #e91e63;
+}
+
+.totals-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.total-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.total-label {
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.total-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #333;
+}
+
+@media (max-width: 992px) {
+  .totals-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .totals-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
